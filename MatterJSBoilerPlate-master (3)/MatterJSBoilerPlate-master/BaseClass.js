@@ -2,7 +2,7 @@ class BaseClass{
     constructor(x, y, width, height) {
         var options = {
             'restitution':0.8,
-            'friction':1.0,
+            'friction':0.5,
             'density':1.0,
         }
         this.body = Bodies.rectangle(x, y, width, height, options);
@@ -16,9 +16,9 @@ class BaseClass{
         push();
         translate(this.body.position.x, this.body.position.y);
         rotate(angle);
-        console.log(this.body)
-        imageMode(CENTER);
-        image(this.image, 0, 0, this.width, this.height);
+
+        rectMode(CENTER);
+        rect(0, 0, this.width, this.height);
         pop();
       }
 }
